@@ -1,14 +1,103 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>COVID-19 Casos e Mortes no Brasil</title>
-<link rel="stylesheet" type="text/css" href="./inspector.css">
-<body>
-<script type="module">
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-import define from "./index.js";
-import {Runtime, Library, Inspector} from "./runtime.js";
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+    <title>COVID-19 no Brasil</title>
+    <meta name="generator" content="Jekyll v3.8.5" />
+    <meta property="og:title" content="covid-19-brasil" />
+    <meta property="og:locale" content="en_US" />
+    <link rel="canonical" href="https://lucasrla.github.io/covid-19-brasil/" />
+    <meta
+      property="og:url"
+      content="https://lucasrla.github.io/covid-19-brasil/"
+    />
+    <meta property="og:site_name" content="covid-19-brasil" />
+    <script type="application/ld+json">
+      {
+        "headline": "Evolução do COVID-19 no Brasil",
+        "@type": "WebSite",
+        "url": "https://lucasrla.github.io/covid-19-brasil/",
+        "name": "covid-19-brasil",
+        "author": "Lucas Amaro",
+        "@context": "https://schema.org"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
 
-const runtime = new Runtime();
-const main = runtime.module(define, Inspector.into(document.body));
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container-xl">
+      <div class="mt-5 mb-5">
+        <h1>COVID-19 Casos e Mortes no Brasil</h1>
+        <h2>Evolução por Estado</h2>
+        <h5>Última atualização: 08 de abril de 2020</h5>
+      </div>
 
-</script>
+      <div id="observablehq-content">
+        <div id="y_type" class="mb-4"></div>
+        <div id="pivot_n" class="mb-4"></div>
+        <div id="num_days" class="mb-4"></div>
+        <div id="doubling_periods" class="mb-4"></div>
+        <div id="selected_regions" class="mb-4"></div>
+        <div id="chart" width="100%"></div>
+        <div id="swatch" class="mb-5"></div>
+      </div>
+
+      <p>
+        Código-fonte:
+        <a href="https://github.com/lucasrla/covid-19-brasil"
+          >https://github.com/lucasrla/covid-19-brasil</a
+        >
+      </p>
+      <p>
+        Fonte dos dados:
+        <a href="https://brasil.io/dataset/covid19/caso"
+          >Brasil.io (Secretarias de Saúde Estaduais)</a
+        >
+      </p>
+    </div>
+
+    <script type="module">
+      import notebook from "https://api.observablehq.com/@lucasrla/covid-19-casos-e-mortes-no-brasil.js?v=3";
+
+      const target = document.querySelector("#observablehq-content");
+
+      const renders = {
+        "viewof y_type": "#y_type",
+        "viewof pivot_n": "#pivot_n",
+        "viewof num_days": "#num_days",
+        "viewof doubling_periods": "#doubling_periods",
+        "viewof selected_regions": "#selected_regions",
+        swatch: "#swatch",
+        chart: "#chart"
+      };
+
+      import {
+        Inspector,
+        Runtime
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+
+      console.log(renders);
+
+      //ref1: https://visionscarto.net/observable-jekyll/
+      //ref2: https://talk.observablehq.com/t/embedding-with-runtime-load-seems-to-no-longer-load-reference-dependencies/1617/4
+      const runtime = new Runtime();
+      const main = runtime.module(notebook, name => {
+        const elmSelector = renders[name];
+        if (elmSelector) {
+          return new Inspector(document.querySelector(elmSelector));
+        }
+      });
+    </script>
+  </body>
+</html>
