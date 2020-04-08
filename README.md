@@ -1,12 +1,8 @@
 # covid-19-brasil
 
-<div id="observablehq-c70ec2af"></div>
-<script type="module">
-import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-import define from "https://api.observablehq.com/@lucasrla/covid-19-casos-e-mortes-no-brasil.js?v=3";
-const inspect = Inspector.into("#observablehq-c70ec2af");
-(new Runtime).module(define, name => (name === "chart") && inspect());
-</script>
+Live: [https://lucasrla.github.io/covid-19-brasil/](https://lucasrla.github.io/covid-19-brasil/)
+
+Observable notebook: [https://observablehq.com/@lucasrla/covid-19-casos-e-mortes-no-brasil](https://observablehq.com/@lucasrla/covid-19-casos-e-mortes-no-brasil)
 
 ## Sobre o projeto
 
