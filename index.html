@@ -6,11 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Begin Jekyll SEO tag v2.6.1 -->
-    <title>COVID-19 no Brasil</title>
-    <meta name="generator" content="Jekyll v3.8.5" />
-    <meta property="og:title" content="covid-19-brasil" />
-    <meta property="og:locale" content="en_US" />
+    <title>COVID-19 no Brasil - Visualização Interativa de Casos e Mortes</title>
+    <meta property="og:title" content="Covid-19 Brasil: Dados por Estado e por Cidade" />
+    <meta property="og:locale" content="pt_BR" />
     <link rel="canonical" href="https://lucasrla.github.io/covid-19-brasil/" />
     <meta
       property="og:url"
@@ -19,7 +17,7 @@
     <meta property="og:site_name" content="covid-19-brasil" />
     <script type="application/ld+json">
       {
-        "headline": "Evolução do COVID-19 no Brasil",
+        "headline": "COVID-19 no Brasil - Visualização Interativa de Casos e Mortes",
         "@type": "WebSite",
         "url": "https://lucasrla.github.io/covid-19-brasil/",
         "name": "covid-19-brasil",
@@ -39,44 +37,51 @@
   <body>
     <div class="container-xl">
       <div class="mt-5 mb-5">
-        <h1>COVID-19 Casos e Mortes no Brasil</h1>
-        <h2>Evolução por Estado</h2>
-        <h5>Última atualização: 2020-06-05 20:58</h5>
+        <h1>COVID-19 no Brasil</h1>
+        <h2>Casos Confirmados e Mortes por Estado (UF)</h2>
       </div>
 
       <div id="observablehq-content" class="mt-5">
-        <div id="y_type" class="mb-4"></div>
-        <div id="pivot_n" class="mb-4"></div>
-        <div id="num_days" class="mb-4"></div>
-        <div id="doubling_periods" class="mb-4"></div>
-        <div id="selected_regions" class="mb-4"></div>
+        <div id="ySelection" class="mb-4"></div>
+        <div id="stateSelection" class="mb-4"></div>
+        <div id="regionSelection" class="mb-4"></div>
+        <div class="mb-4 text-muted"><em>Passe o mouse sobre uma curva para visualizar o total acumulado.</em></div>
         <div id="chart" width="100%"></div>
         <div id="swatch" class="mb-5"></div>
       </div>
 
+      <p class="lead"><a href="https://observablehq.com/@lucasrla/covid-19-brasil-por-cidade" target="_blank">Visualize também o gráfico com as 30 maiores cidades do país</a>.</p>
+
+      <hr />
+
       <p>
-        Fonte:
+        Código-fonte disponível no <a href="https://github.com/lucasrla/covid-19-brasil" target="_blank">Github</a> e no
+        <a href="https://observablehq.com/@lucasrla/covid-19-casos-e-mortes-no-brasil" target="_blank">ObservableHQ</a>.
+      </p>
+
+      <p>
+        Dados:
         <a href="https://brasil.io/dataset/covid19/caso" target="_blank"
           >Secretarias de Saúde das Unidades Federativas, dados tratados por
           Álvaro Justen / Brasil.IO</a
-        >
+        >.
       </p>
 
       <div>
-        Avisos:
+        Lembretes:
         <ul>
           <li>
             A cada dia, casos e mortes reportadas pelas Secretarias de Saúde
             (que utilizamos acima) podem estar em desincronia com os dados
             informados pelo Ministério da Saúde em suas coletivas de imprensa.
             Esses eventuais descasamentos entre as fontes são inevitáveis,
-            porém, felizmente, são temporários. É esperado que todas elas
-            convirjam.
+            porém, felizmente, são temporários. Ao longo do tempo, todas deveriam 
+            convergir.
           </li>
           <li>
             Cada cidade tem sua própria metodologia e desafios (que variam no
             tempo) para testar casos e para informar mortes suspeitas. Por isso,
-            tanto casos quanto mortes estão certamente sendo subestimados acima.
+            tanto casos quanto mortes estão certamente sendo subestimados nos dados acima.
           </li>
           <li>
             Caso tenha interesse nos dados de óbitos suspeitos e confirmados,
@@ -91,14 +96,6 @@
         </ul>
       </div>
 
-      <hr />
-
-      <p>
-        Código-fonte desta página está disponível em
-        <a href="https://github.com/lucasrla/covid-19-brasil" target="_blank"
-          >https://github.com/lucasrla/covid-19-brasil</a
-        >
-      </p>
     </div>
 
     <script type="module">
@@ -107,11 +104,9 @@
       const target = document.querySelector("#observablehq-content");
 
       const renders = {
-        "viewof y_type": "#y_type",
-        "viewof pivot_n": "#pivot_n",
-        "viewof num_days": "#num_days",
-        "viewof doubling_periods": "#doubling_periods",
-        "viewof selected_regions": "#selected_regions",
+        "viewof ySelection": "#ySelection",
+        "viewof stateSelection": "#stateSelection",
+        "viewof regionSelection": "#regionSelection",
         swatch: "#swatch",
         chart: "#chart",
       };
