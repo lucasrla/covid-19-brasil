@@ -25,7 +25,6 @@
         "@context": "https://schema.org"
       }
     </script>
-    <!-- End Jekyll SEO tag -->
 
     <link
       rel="stylesheet"
@@ -50,9 +49,17 @@
         <div id="swatch" class="mb-5"></div>
       </div>
 
-      <p class="lead"><a href="https://observablehq.com/@lucasrla/covid-19-brasil-por-cidade" target="_blank">Visualize também o gráfico com as 30 maiores cidades do país</a>.</p>
+      <div class="mb-3 mt-5">
+        <p class="lead">
+          <a href="https://observablehq.com/@lucasrla/covid-19-brasil-por-cidade" target="_blank">Visualize também o gráfico com as 30 maiores cidades do país</a>.
+        </p>
+      </div>
 
-      <hr />
+      <div class="mb-5">
+        <small id="datesLastUpdate" class="mb-5 text-muted text-monospace"></small>
+      </div>
+
+      <hr class="mb-5" />
 
       <p>
         Código-fonte disponível no <a href="https://github.com/lucasrla/covid-19-brasil" target="_blank">Github</a> e no
@@ -60,7 +67,7 @@
       </p>
 
       <p>
-        Dados:
+        Fonte dos dados:
         <a href="https://brasil.io/dataset/covid19/caso" target="_blank"
           >Secretarias de Saúde das Unidades Federativas, dados tratados por
           Álvaro Justen / Brasil.IO</a
@@ -101,12 +108,13 @@
     <script type="module">
       import notebook from "https://api.observablehq.com/@lucasrla/covid-19-casos-e-mortes-no-brasil.js?v=3";
 
-      const target = document.querySelector("#observablehq-content");
+      // const target = document.querySelector("#observablehq-content");
 
       const renders = {
         "viewof ySelection": "#ySelection",
         "viewof stateSelection": "#stateSelection",
         "viewof regionSelection": "#regionSelection",
+        "datesLastUpdate": "#datesLastUpdate",
         swatch: "#swatch",
         chart: "#chart",
       };
@@ -116,7 +124,7 @@
         Runtime,
       } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
 
-      console.log(renders);
+      // console.log(renders);
 
       //ref1: https://visionscarto.net/observable-jekyll/
       //ref2: https://talk.observablehq.com/t/embedding-with-runtime-load-seems-to-no-longer-load-reference-dependencies/1617/4
