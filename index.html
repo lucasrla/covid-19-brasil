@@ -40,23 +40,29 @@
         <h2>Casos Confirmados e Mortes por Estado (UF)</h2>
       </div>
 
-      <div id="observablehq-content" class="mt-5">
+      <div class="mb-5 mt-5" id="loading">
+        <p class="lead">
+          Carregando...
+        </p>
+      </div>
+
+      <div class="mt-5 invisible">
         <div id="ySelection" class="mb-4"></div>
         <div id="stateSelection" class="mb-4"></div>
         <div id="regionSelection" class="mb-4"></div>
-        <div class="mb-4 text-muted"><em>Passe o mouse sobre uma curva para visualizar o total acumulado.</em></div>
+        <div class="mb-4 text-muted"><small>Passe o mouse sobre uma curva para visualizar o total acumulado.</small></div>
         <div id="chart" width="100%"></div>
         <div id="swatch" class="mb-5"></div>
       </div>
 
-      <div class="mb-3 mt-5">
+      <div class="mb-3 mt-5 invisible">
         <p class="lead">
           <a href="https://observablehq.com/@lucasrla/covid-19-brasil-por-cidade" target="_blank">Visualize também o gráfico com as 30 maiores cidades do país</a>.
         </p>
       </div>
 
-      <div class="mb-5">
-        <small id="datesLastUpdate" class="mb-5 text-muted text-monospace"></small>
+      <div class="mb-5 invisible">
+        <small class="text-muted">Data da última atualização por estado: <span id="datesLastUpdate" class="text-monospace"></span></small>
       </div>
 
       <hr class="mb-5" />
@@ -126,15 +132,22 @@
 
       // console.log(renders);
 
-      //ref1: https://visionscarto.net/observable-jekyll/
-      //ref2: https://talk.observablehq.com/t/embedding-with-runtime-load-seems-to-no-longer-load-reference-dependencies/1617/4
+      // ref: https://github.com/observablehq/runtime/blob/master/README.md
+      // ref: https://github.com/observablehq/inspector/blob/master/README.md
+      // example: https://visionscarto.net/observable-jekyll/
+      // q&a: https://talk.observablehq.com/t/embedding-with-runtime-load-seems-to-no-longer-load-reference-dependencies/1617/4
+      
       const runtime = new Runtime();
+
       const main = runtime.module(notebook, (name) => {
-        const elmSelector = renders[name];
-        if (elmSelector) {
-          return new Inspector(document.querySelector(elmSelector));
-        }
+        const elSelector = renders[name];
+        if (elSelector) return new Inspector(document.querySelector(elSelector));
       });
+
+      document.getElementById("loading").remove();
+      
+      let invisibles = document.getElementsByClassName("invisible");
+      while (invisibles.length) invisibles[0].classList.remove("invisible");
     </script>
   </body>
 </html>
