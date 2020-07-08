@@ -2,19 +2,17 @@
 
 Visualização interativa de casos confirmados e mortes por COVID-19 no Brasil. 
 
-Website online em [https://lucasrla.github.io/covid-19-brasil/](https://lucasrla.github.io/covid-19-brasil/).
+## Site
 
 ![Demo](demo.gif)
+
+Gráfico interativo no ar em [https://lucasrla.github.io/covid-19-brasil/](https://lucasrla.github.io/covid-19-brasil/).
 
 Atualizado diaria e automaticamente com os [dados mais recentes do Brasil.io](https://brasil.io).
 
 ## Observable notebooks
 
-Disponíveis online em:
-
-1. [Casos Confirmados e Mortes por estado brasileiro](https://observablehq.com/@lucasrla/covid-19-casos-e-mortes-no-brasil)
-
-2. [Casos Confirmados e Mortes nas 30 maiores cidades brasileiras](https://observablehq.com/@lucasrla/covid-19-casos-e-mortes-no-brasil)
+Observable notebooks estão disponíveis online em: [https://observablehq.com/collection/@lucasrla/covid-19](https://observablehq.com/collection/@lucasrla/covid-19).
 
 ## Agradecimentos
 
