@@ -12,7 +12,7 @@ Atualizado diaria e automaticamente com os [dados mais recentes do Brasil.io](ht
 
 ## Observable notebooks
 
-Observable notebooks estão disponíveis online em: [https://observablehq.com/collection/@lucasrla/covid-19](https://observablehq.com/collection/@lucasrla/covid-19).
+O notebook utilizado (por trás dos panos) no site é código-aberto e está disponível online em: [https://observablehq.com/collection/@lucasrla/covid-19](https://observablehq.com/collection/@lucasrla/covid-19).
 
 ## Agradecimentos
 
