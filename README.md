@@ -18,3 +18,7 @@ O notebook utilizado (por trás dos panos) no site é código-aberto e está dis
 
 - [Brasil.io e voluntários](https://data.brasil.io/dataset/covid19/_meta/list.html) pela coleta dos dados
 - [Yong-Yeol Ahn](http://yongyeol.com) pelo [Observable notebook](https://observablehq.com/@yy/covid-19-spreading-trends) em que me inspirei
+
+## Licença
+
+Este projeto é distribuído sob a licença [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.pt-br.html).
