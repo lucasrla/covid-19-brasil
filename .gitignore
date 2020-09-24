@@ -142,3 +142,4 @@ cython_debug/
 _inspiration/
 TODOs.md
 demo.mov
+.python-version
