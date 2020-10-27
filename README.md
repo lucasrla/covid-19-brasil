@@ -6,13 +6,17 @@ Visualização interativa de casos confirmados e mortes por COVID-19 no Brasil.
 
 ![Demo](demo.gif)
 
-Gráfico interativo no ar em [https://lucasrla.github.io/covid-19-brasil/](https://lucasrla.github.io/covid-19-brasil/).
+O gráfico interativo acima está disponível online em [https://lucasrla.github.io/covid-19-brasil/](https://lucasrla.github.io/covid-19-brasil/).
 
-Atualizado diaria e automaticamente com os [dados mais recentes do Brasil.io](https://brasil.io).
+É atualizado diaria e automaticamente com os [dados mais recentes do Brasil.io](https://brasil.io).
 
-## Observable notebooks
+## Observable Notebooks
 
-O notebook utilizado (por trás dos panos) no site é código-aberto e está disponível online em: [https://observablehq.com/collection/@lucasrla/covid-19](https://observablehq.com/collection/@lucasrla/covid-19).
+Os notebooks utilizados (por trás dos panos) no site são código-aberto e estão disponível online em [https://observablehq.com/collection/@lucasrla/covid-19](https://observablehq.com/collection/@lucasrla/covid-19).
+
+## Streamlit
+
+Uma versão alternativa do site com os notebooks _embedded_ ("embutidos") está disponível em [https://share.streamlit.io/lucasrla/covid-19-brasil/master/app.py](https://share.streamlit.io/lucasrla/covid-19-brasil/master/app.py).
 
 ## Agradecimentos
 
